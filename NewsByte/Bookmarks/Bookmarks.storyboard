@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bookmarks-->
+        <scene sceneID="ALM-kh-L8d">
+            <objects>
+                <viewController storyboardIdentifier="BookmarksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L1e-vG-cCc" customClass="BookmarksViewController" customModule="NewsByte" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tKc-nq-c5J">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Bookmarks Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guw-vR-hAt">
+                                <rect key="frame" x="107.00000000000001" y="415.66666666666669" width="179.33333333333337" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-uo-6SW">
+                                <rect key="frame" x="0.0" y="139" width="393" height="630"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bN1-op-V6Y" customClass="CustomSearch" customModule="NewsByte" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="69" width="393" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lRm-zC-WDn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NQi-7Y-AHp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NQi-7Y-AHp" firstAttribute="bottom" secondItem="TOM-uo-6SW" secondAttribute="bottom" id="4DB-1d-O2P"/>
+                            <constraint firstItem="NQi-7Y-AHp" firstAttribute="trailing" secondItem="TOM-uo-6SW" secondAttribute="trailing" id="A7g-QU-uG6"/>
+                            <constraint firstItem="TOM-uo-6SW" firstAttribute="top" secondItem="bN1-op-V6Y" secondAttribute="bottom" constant="10" id="Evv-Lv-ptW"/>
+                            <constraint firstItem="bN1-op-V6Y" firstAttribute="top" secondItem="NQi-7Y-AHp" secondAttribute="top" constant="10" id="LyA-Ia-dHe"/>
+                            <constraint firstItem="TOM-uo-6SW" firstAttribute="leading" secondItem="NQi-7Y-AHp" secondAttribute="leading" id="QUv-lW-iN7"/>
+                            <constraint firstItem="guw-vR-hAt" firstAttribute="centerX" secondItem="tKc-nq-c5J" secondAttribute="centerX" id="UZh-UX-wPf"/>
+                            <constraint firstItem="bN1-op-V6Y" firstAttribute="leading" secondItem="NQi-7Y-AHp" secondAttribute="leading" id="ajL-wk-QVd"/>
+                            <constraint firstItem="NQi-7Y-AHp" firstAttribute="trailing" secondItem="bN1-op-V6Y" secondAttribute="trailing" id="eJJ-3s-39x"/>
+                            <constraint firstItem="guw-vR-hAt" firstAttribute="centerY" secondItem="tKc-nq-c5J" secondAttribute="centerY" id="xBC-ZH-nGj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bookmarks" image="star" catalog="system" selectedImage="star.fill" id="hMn-gK-ibN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bookmarksListTableView" destination="TOM-uo-6SW" id="vZF-sy-knt"/>
+                        <outlet property="searchVw" destination="bN1-op-V6Y" id="Pxb-7q-rKb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNM-XG-0Qe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="-23"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
